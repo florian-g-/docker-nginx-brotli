@@ -13,10 +13,10 @@ pipeline {
         disableConcurrentBuilds()
     }
     environment {
-        DOCKER_REGISTRY_CREDENTIAL_ID = $DOCKER_REGISTRY_HUB_CREDENTIAL_ID
-        DOCKER_USER = $DOCKER_REGISTRY_HUB_USER
+        DOCKER_REGISTRY_CREDENTIAL_ID = "$DOCKER_REGISTRY_HUB_CREDENTIAL_ID"
+        DOCKER_USER = "$DOCKER_REGISTRY_HUB_USER"
         DOCKER_IMAGE = 'nginx-brotli'
-        DOCKER_TAG = params.tag ?: '1.16.1'
+        DOCKER_TAG = "${params.tag ?: '1.16.1}"
         DOCKER_FQIN = "${DOCKER_USER}/${DOCKER_IMAGE}:${DOCKER_TAG}"
     }
 
